@@ -1,4 +1,4 @@
-function [ang_per_km,clust_per_km,alpha] = run_experiment(n,p,d,k,theta,sigma,tol,alpha_start)
+function [ang_per_km,clust_per_km,ang_per_ssc,clust_per_ssc,alpha] = run_experiment(n,p,d,k,theta,sigma,tol,alpha_start)
 %this function get all parameters required for sampling points, and runs
 %k-means and SSC on it.
 
@@ -13,9 +13,10 @@ clust_per_km = clustering_performance(Z_km,Z,k);
 %running SSC algorithm to recover clustering:
 [clust_miss,Cmat, Z_ssc] = SSC(X',k,Z);
 %recovering the subspaces, and getting the performance measures:
-
-
+B_ssc = bases_for_clusters(X,Z_ssc,k,d);
+Z_ssc = Z_ssc';
 clust_per_ssc = clustering_performance(Z,Z_ssc,k);
+ang_per_ssc = angle_performance(B_ssc,B);
 
 
 end
