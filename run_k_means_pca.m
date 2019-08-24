@@ -8,7 +8,7 @@ function [B,Z] = run_k_means_pca(X,k,d)
 
 %performing K-means:
 Z = kmeans(X,k);
-B = bases_for_clusters(X,Z,k,d)
+B = bases_for_clusters(X,Z,k,d);
 Z = Z'; %transposing Z to match previous dimension calls.
 
 end
