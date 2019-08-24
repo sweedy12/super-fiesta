@@ -37,10 +37,8 @@ if (add_noise == 0)
                 disp(cur_n);
                 disp("theta is");
                 disp(cur_theta);
-                disp("P is");
-                disp(p);
                 d= p/5;
-                [ang_per_km, clust_per_km,alpha] = run_experiment(cur_n,p,d,K,cur_theta,0,tol,0.5);
+                [ang_per_km, clust_per_km,alpha] = run_experiment(cur_n,p,d,K,cur_theta,0,tol,alpha);
                 %updating all the holding arrays:
                 km_ang_mes(exp_ind) = ang_per_km;
                 km_clust_mes(exp_ind) = clust_per_km;
@@ -53,22 +51,11 @@ if (add_noise == 0)
         ta = table(n_arr',theta_arr',km_ang_mes', km_clust_mes');
         h1 = heatmap(ta, 'Var1','Var2','ColorVariable', 'Var3');
         pstr = int2str(p);
-        cur_t = strcat(km_angle_title,pstr);
-        h1.Title = cur_t;
-        h1.XLabel = "Number of samples";
-        h1.YLabel = "\theta";
-        %hmpl = plot(h1);
-        hmname = strcat("kmeans_hm_angle_p=", pstr);
-        saveas(h1, hmname, "png");
-        h2 = heatmap(ta, 'Var1','Var2','ColorVariable', 'Var4');
-        cur_t = strcat(km_cluster_title,pstr);
-        h2.Title = cur_t;
-        h2.XLabel = "Number of samples";
-        h2.YLabel = "\theta";
-        %hmpl = plot(h1);
-        hmname = strcat("kmeans_hm_cluster_p=", pstr);
-        saveas(h2, hmname, "png");
+        cur_t = str
+        hmpl = plot(h1);
         
+        hmname = strcat("kmeans_hm_angle_p=", pstr);
+        saveas(hmpl, hmname, "png");
         
         
     end

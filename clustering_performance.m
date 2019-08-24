@@ -12,7 +12,7 @@ s = size(P);
 for i=1:s(1)
     cur_per = 0;
     %going over all supspaces:
-    for j=1:s(2)
+    for j=1:n
         if (P(i,Z_rec(j)) == Z(j)) %good clustering, found match.
             cur_per = cur_per + 1;
         end

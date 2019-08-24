@@ -35,13 +35,7 @@ while (calibrated == 0)
          alpha_low = alpha;
          alpha = (alpha_high+alpha) / 2;
      end
-      if (alpha == 1)
-         for i=1:n+1
-            subs{i}= sample_subspace(p,d);
-         end
-         alpha = 0.5;
-         alpha_low = 0;
-         alpha_high = 1;
+         
          
      end
      
