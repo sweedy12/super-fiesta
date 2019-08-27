@@ -9,20 +9,20 @@ if (add_noise == 0)
     xlabel = "Number of samples";
     ylabel = "theta";
     %titles variables:
-    km_angle_title = "Heatmap for k-means, C_subspace performance, p=";
-    km_cluster_title = "Heatmap for k-means, C_cluster performance, p=";
-    ssc_angle_title = "Heatmap for SSC, C_subspace performance, p=";
-    ssc_cluster_title = "Heatmap for SSC, C_cluster performance, p=";
+    km_angle_title = "Heatmap for k-means, C_{subspace} performance, p=";
+    km_cluster_title = "Heatmap for k-means, C_{cluster} performance, p=";
+    ssc_angle_title = "Heatmap for SSC, C_{subspace} performance, p=";
+    ssc_cluster_title = "Heatmap for SSC, C_{cluster} performance, p=";
 else
     N = 1000;
     sigma = logspace(-2,1,10);
     xlabel = "Noise level (sigma)";
     ylabel = "theta";
     %titles variables:
-    km_angle_title = "Heatmap for noisy case, k-means, C_subspace performance, p=";
-    km_cluster_title = "Heatmap for noisy case, k-means, C_cluster performance, p=";
-    ssc_angle_title = "Heatmap for noisy case, SSC, C_subspace performance, p=";
-    ssc_cluster_title = "Heatmap for noisy case, SSC, C_cluster performance, p=";
+    km_angle_title = "Heatmap for noisy case, k-means, C_{subspace} performance, p=";
+    km_cluster_title = "Heatmap for noisy case, k-means, C_{cluster} performance, p=";
+    ssc_angle_title = "Heatmap for noisy case, SSC, C_{subspace} performance, p=";
+    ssc_cluster_title = "Heatmap for noisy case, SSC, C_{cluster} performance, p=";
 end
 P = [5,25,125];
 K = 3;
