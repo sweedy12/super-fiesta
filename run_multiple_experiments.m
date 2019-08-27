@@ -91,7 +91,7 @@ if (add_noise == 0)
 end
 
 %running for the noisy case:
-if (noise == 1)
+if (add_noise == 1)
     exp_size = 100;
     for t=1:3 %P iteration
         p = P(t);
