@@ -5,18 +5,18 @@ function [ang_per_km,clust_per_km,ang_per_ssc,clust_per_ssc,alpha] = run_experim
 %sampling points
 [X,B,Z,alpha] = sample_points(n,p,d,k,theta,sigma,tol,alpha_start);
 %running K-means and PCA to recover the clusteing and subspaces. 
-[B_km,Z_km] = run_k_means_pca(X,k,d);
+[B_km,Z_km,is_zero_km] = run_k_means_pca(X,k,d);
 %getting the two performance measures
-ang_per_km = angle_performance(B_km,B);
+ang_per_km = angle_performance(B_km,B,is_zero_km);
 clust_per_km = clustering_performance(Z_km,Z,k);
 
 %running SSC algorithm to recover clustering:
 [clust_miss,Cmat, Z_ssc] = SSC(X',k,Z);
 %recovering the subspaces, and getting the performance measures:
-B_ssc = bases_for_clusters(X,Z_ssc,k,d);
+[B_ssc,is_zero_ssc] = bases_for_clusters(X,Z_ssc,k,d);
 Z_ssc = Z_ssc';
 clust_per_ssc = clustering_performance(Z,Z_ssc,k);
-ang_per_ssc = angle_performance(B_ssc,B);
+ang_per_ssc = angle_performance(B_ssc,B,is_zero_ssc);
 
 
 end

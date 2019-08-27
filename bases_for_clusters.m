@@ -1,7 +1,8 @@
-function [B] = bases_for_clusters(X,Z,k,d)
+function [B, is_zero] = bases_for_clusters(X,Z,k,d)
 B = cell(1,k);
 Xs = size(X);
 p = Xs(2);
+is_zero  = zeros(1,k);
 %going through all clusters, performing PCA:
 for i=1:k
     %creating array to hold the current base:
@@ -15,5 +16,8 @@ for i=1:k
     %taking the leading d components to be the basis
     cur_b(:,1:cmin)= coeff(:,1:cmin);
     B{i}=  cur_b;
+    if (cmin == 0) %checking if the current subspace is actually null
+        is_zero(i) =1;
+    end
 end
 end

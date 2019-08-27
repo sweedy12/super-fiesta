@@ -1,4 +1,4 @@
-function [per] = angle_performance(B_rec, B )
+function [per] = angle_performance(B_rec, B, is_zero)
 %this function gets the original subspaces B, and the recovered subspaces
 %B_rec, and calculates the angle performance measure mentioned in the
 %project description (1).
@@ -12,8 +12,12 @@ for i=1:s(1)
     cur_per = 0;
     %going over all supspaces:
     for j=1:s(2)
-        temp = cos(subspace(B{j},B_rec{P(i,j)}));
-        temp = temp*temp;
+        if (is_zero(s(2)) == 1)
+            temp = 0;
+        else
+            temp = cos(subspace(B{j},B_rec{P(i,j)}));
+            temp = temp*temp;
+        end 
         cur_per = cur_per + temp;
     end
     if (cur_per > per)

@@ -1,7 +1,8 @@
-function [B] = bases_for_clusters(X,Z,k,d)
+function [B, is_zero] = bases_for_clusters(X,Z,k,d)
 B = cell(1,k);
 Xs = size(X);
 p = Xs(2);
+is_zero  = 0;
 %going through all clusters, performing PCA:
 for i=1:k
     %creating array to hold the current base:
