@@ -6,7 +6,8 @@ sigma = logspace(-2,1,10);
 theta = exp(linspace(log(0.001),log(pi/2),10));
 P = 55;
 K = 3;
-D =  uint16(exp(linspace(log(1),log(55),10)));
+D =  uint16(exp(linspace(log(1),log(50),10)));
+D(3) = 3;
 %noiseless case
 xlabel = "d value";
 ylabel = "theta value";

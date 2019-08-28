@@ -5,12 +5,12 @@ N = 1000;
 sigma = logspace(-2,1,10);
 theta = exp(linspace(log(0.001),log(pi/2),10));
 P = 50;
-K = 1:10;
+K = 2:8;
 D = 10;
 %noiseless case
 xlabel = "K value";
 ylabel = "theta value";
-exp_size = 100;
+exp_size = 70;
 km_ang_mes = zeros(1,exp_size);
 km_clust_mes = zeros(1,exp_size);
 ssc_ang_mes = zeros(1,exp_size);
@@ -20,8 +20,13 @@ k_arr = zeros(1,exp_size);
 exp_ind = 1;
 for t=1:10 %theta iteration
     cur_theta = theta(t);
-    for d=10 %d iteration
+    for d=1:7 %k iteration
         cur_k = K(d);
+        disp("theta is");
+        disp(cur_theta);
+        disp("K is");
+        disp(cur_k);
+        disp("-----------");
         [ang_per_km, clust_per_km,ang_per_ssc,clust_per_ssc,alpha] = run_experiment(N,P,D,cur_k,cur_theta,0,tol,0.5);
         %updating all the holding arrays:
         km_ang_mes(exp_ind) = ang_per_km;
