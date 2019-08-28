@@ -129,18 +129,18 @@ if (add_noise == 1)
         ta = table(sigma_arr',theta_arr',km_ang_mes', km_clust_mes');
         pstr = int2str(p);
         cur_t = strcat(km_angle_title,pstr);
-        hmname = strcat("kmeans_hm_angle_p=", pstr);
+        hmname = strcat("noisy_kmeans_hm_angle_p=", pstr);
         save_heatmap(ta,hmname,"Var1","Var2","Var3",cur_t,xlabel,ylabel);
         cur_t = strcat(km_cluster_title,pstr);
-        hmname = strcat("kmeans_hm_cluster_p=", pstr);
+        hmname = strcat("noisy_kmeans_hm_cluster_p=", pstr);
         save_heatmap(ta,hmname,"Var1","Var2","Var4",cur_t,xlabel,ylabel);
         %now, plotting the heatmaps for the SSC algorithm:
         ta = table(sigma_arr',theta_arr',ssc_ang_mes',ssc_clust_mes');
         cur_t = strcat(ssc_angle_title,pstr);
-        hmname = strcat("ssc_hm_angle_p=", pstr);
+        hmname = strcat("noisy_ssc_hm_angle_p=", pstr);
         save_heatmap(ta,hmname,"Var1","Var2","Var3",cur_t,xlabel,ylabel);
         cur_t = strcat(ssc_cluster_title,pstr);
-        hmname = strcat("ssc_hm_cluster_p=", pstr);
+        hmname = strcat("noisy_ssc_hm_cluster_p=", pstr);
         save_heatmap(ta,hmname,"Var1","Var2","Var4",cur_t,xlabel,ylabel); 
 
     end
