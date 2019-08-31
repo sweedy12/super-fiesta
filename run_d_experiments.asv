@@ -86,18 +86,18 @@ end
 %plotting the heatmap for the current p value:
 ta = table(d_arr',sigma_arr',km_ang_mes', km_clust_mes');
 cur_t = "Heatmap for noisy case, k-means, c_subspace";
-hmname = "noisy_kmeans_hm_angle_d_theta_new";
+hmname = "noisy_kmeans_hm_angle_d_theta=";
 save_heatmap(ta,hmname,"Var1","Var2","Var3",cur_t,xlabel,ylabel);
 cur_t ="Heatmap for noisy case, k-means, c_cluster";
-hmname = "noisy_kmeans_hm_cluster_d_theta_new";
+hmname = "noisy_kmeans_hm_cluster_d_theta=";
 save_heatmap(ta,hmname,"Var1","Var2","Var4",cur_t,xlabel,ylabel);
 %now, plotting the heatmaps for the SSC algorithm:
 ta = table(d_arr',theta_arr',ssc_ang_mes',ssc_clust_mes');
 cur_t = "Heatmap for noisy case, ssc, c_subspace";
-hmname = "noisy_ssc_hm_angle_d_theta_new";
+hmname = "noisy_ssc_hm_angle_d_theta=";
 save_heatmap(ta,hmname,"Var1","Var2","Var3",cur_t,xlabel,ylabel);
 cur_t = "Heatmap for noisy case, ssc, c_cluster";
-hmname = "noisy_ssc_hm_cluster_d_theta_new";
+hmname = "noisy_ssc_hm_cluster_d_theta=";
 save_heatmap(ta,hmname,"Var1","Var2","Var4",cur_t,xlabel,ylabel);
 
 end
