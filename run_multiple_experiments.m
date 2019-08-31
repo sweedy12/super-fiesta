@@ -18,11 +18,11 @@ else
     sigma = logspace(-2,1,10);
     xlabel = "Noise level (sigma)";
     ylabel = "theta";
-    %titles variables:
-    km_angle_title = "Heatmap for noisy case, k-means, C_{subspace} performance, p=";
-    km_cluster_title = "Heatmap for noisy case, k-means, C_{cluster} performance, p=";
+    %titles variables:case, k-means, C_{cluster} performance, p=";
     ssc_angle_title = "Heatmap for noisy case, SSC, C_{subspace} performance, p=";
-    ssc_cluster_title = "Heatmap for noisy case, SSC, C_{cluster} performance, p=";
+    ssc_cluster_title = "Heatmap for noisy"
+    km_angle_title = "Heatmap for noisy case, k-means, C_{subspace} performance, p=";
+    km_cluster_title = "Heatmap for noisy  case, SSC, C_{cluster} performance, p=";
 end
 P = [5,25,125];
 K = 3;
@@ -48,7 +48,7 @@ if (add_noise == 0)
         for j=1:10 %angle iteration
             cur_theta = theta(j);
             for i=1:10 %sample size iteration
-                cur_n = N(i);
+                cur_n = N(i)*P(t)/5;
                 disp("n is");
                 disp(cur_n);
                 disp("theta is");

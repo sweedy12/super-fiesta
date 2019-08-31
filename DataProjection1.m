@@ -15,7 +15,7 @@
 %--------------------------------------------------------------------------
 
 
-function Xp = DataProjection(X,r,type)
+function Xp = DataProjection1(X,r,type)
 
 if r == 0
     Xp = X;  

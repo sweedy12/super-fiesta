@@ -19,6 +19,7 @@ function [CMatC,sc,OutlierIndx,Fail] = OutlierDetection(CMat,s)
 
 n = max(s);
 N = size(CMat,2);
+
 NanIndx = [];
 FailCnt = 0;
 Fail = 0;

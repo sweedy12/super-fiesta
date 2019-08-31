@@ -100,7 +100,7 @@ Simulation study - noiseless case
 \begin_layout Standard
 For this part, we chose to use the SSC recovery algorithm.
  We used the given matlab package to recover the clustering of the points
- via SSC, and later performed PCA on eahc cluster, separately, to recover
+ via SSC, and later performed PCA on each cluster, separately, to recover
  the original subspaces.
 \end_layout
 
@@ -183,7 +183,7 @@ It seems as though the
 \begin_inset Formula $C_{subspace}$
 \end_inset
 
- measure tends to get high values, for all values of P.
+ measure tends to get high values for all values of P.
  On the other hand, the subspace measure seems to reflect the performance
  better in this case.
  We can clearly see that the performance is getting worse as P increases,
@@ -282,6 +282,82 @@ We shall note that the SSC process outputs the clustering of the original
 We can see that for each of the 2 performance measures, the SSC algorithm
  does a better job than the simple K-means algorithm.
  We still see the same trends we saw in the K-means' heatmaps.
+\end_layout
+
+\begin_layout Subsubsection*
+Transformation to match the performance curve function
+\end_layout
+
+\begin_layout Standard
+To find a (monotonic) transformation for the sample size, such that the
+ performance curves between different 
+\begin_inset Formula $P$
+\end_inset
+
+s match, we took the following approach:
+\end_layout
+
+\begin_layout Standard
+For each sample size 
+\begin_inset Formula $N$
+\end_inset
+
+ used in the graph produced for 
+\begin_inset Formula $P=5$
+\end_inset
+
+, we searched for a sample size 
+\begin_inset Formula $N'$
+\end_inset
+
+ to use for 
+\begin_inset Formula $P=5^{2},5^{3}$
+\end_inset
+
+such that its performance column will be as similar as possible to the correspon
+ding column in 
+\begin_inset Formula $P=5$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We measured similarity with 
+\begin_inset Formula $L_{2}$
+\end_inset
+
+ norm, and other 
+\begin_inset Formula $p-norms$
+\end_inset
+
+ yielded similar results.
+ As the nature of the problem is random, and accuracies may vary in different
+ runs, we sampled one run, and we calculated the mean distance of different
+ runs with the same parameters (i.e.
+ 
+\begin_inset Formula $P=5$
+\end_inset
+
+ and some 
+\begin_inset Formula $N$
+\end_inset
+
+) from it, and tried to match the mean distance of runs with 
+\begin_inset Formula $P=5^{2},5^{3}$
+\end_inset
+
+ and the corresponding sample sizes.
+\end_layout
+
+\begin_layout Standard
+We expected larger sample size (linear in the dimension) will be needed
+ to match the performance of 
+\begin_inset Formula $P=5$
+\end_inset
+
+ in larger dimensions, but our simulation results were not consistent enough
+ to confirm or deny these expectations.
 \end_layout
 
 \begin_layout Part*
@@ -810,9 +886,9 @@ Here, we see that there is a severe drop in performace when adding noise.
 \end_inset
 
  measure.
- This means they both have a very hard time od recreating the subspaces,
- which make sense, since we have subspaces with very high dimension, and
- with a lot of noise - which makes the problem much harder.
+ This means they both have a very hard time recreating the subspaces, which
+ make sense, since we have subspaces with very high dimension, and with
+ a lot of noise - which makes the problem much harder.
 \end_layout
 
 \begin_layout Standard
