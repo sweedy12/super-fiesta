@@ -3,8 +3,6 @@ function [per] = clustering_performance(Z_rec,Z,k)
 %recreated clustering of the data points Z_rec, and returns the performance
 %measure which is the maximum (over all permutations) fraction of points
 %clustered correctly.
-
-
 z_s = size(Z_rec);
 n= z_s(2);
 per = 0;

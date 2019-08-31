@@ -10,7 +10,7 @@
 %--------------------------------------------------------------------------
 
 
-function CKSym = BuildAdjacency1(CMat,K)
+function CKSym = BuildAdjacency(CMat,K)
 
 N = size(CMat,1);
 CAbs = abs(CMat);

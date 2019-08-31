@@ -12,7 +12,7 @@
 %--------------------------------------------------------------------------
 
 
-function [Grps , SingVals, LapKernel] = SpectralClustering1(CKSym,n)
+function [Grps , SingVals, LapKernel] = SpectralClustering(CKSym,n)
 
 N = size(CKSym,1);
 MAXiter = 1000; % Maximum iteration for KMeans Algorithm
