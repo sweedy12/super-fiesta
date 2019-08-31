@@ -179,6 +179,20 @@ For the
 \end_layout
 
 \begin_layout Standard
+It seems as though the 
+\begin_inset Formula $C_{subspace}$
+\end_inset
+
+ measure tends to get high values, for all values of P.
+ On the other hand, the subspace measure seems to reflect the performance
+ better in this case.
+ We can clearly see that the performance is getting worse as P increases,
+ and also as the average angle between subspaces is getting smaller.
+ Indeed, the problem is tougher when the angle between the subspaces is
+ smaller, since it's harder to separate the subspaces.
+\end_layout
+
+\begin_layout Standard
 Now, for the SSC algorithm, we provide the same plots.
 \end_layout
 
@@ -215,6 +229,595 @@ First, for the
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+For the second measure, 
+\begin_inset Formula $C_{subspace}$
+\end_inset
+
+, we get the following heatmaps:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/ssc_hm_angle_p=5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/ssc_hm_angle_p=25.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/ssc_hm_angle_p=125.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We shall note that the SSC process outputs the clustering of the original
+ data points.
+ In order to recover the subspaces 
+\begin_inset Formula $B$
+\end_inset
+
+ we chose to perform PCA over each set of points corresponding to the same
+ cluster (in a similar fashion to what was done in the K-means algorithm
+ suggested).
+\end_layout
+
+\begin_layout Standard
+We can see that for each of the 2 performance measures, the SSC algorithm
+ does a better job than the simple K-means algorithm.
+ We still see the same trends we saw in the K-means' heatmaps.
+\end_layout
+
+\begin_layout Part*
+Simulation study - noisy case
+\end_layout
+
+\begin_layout Standard
+We attach the heatmaps for the noisy case, where each heatmap describes
+ the change in the performance measure, according to the noise level, and
+ the average angle between the different subspaces.
+\end_layout
+
+\begin_layout Standard
+First, the results for the simple K-means algorithm:
+\end_layout
+
+\begin_layout Standard
+For the 
+\begin_inset Formula $C_{cluster}$
+\end_inset
+
+ performance measure:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_cluster_p=5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_cluster_p=25.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_cluster_p=125.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And for the second measure, 
+\begin_inset Formula $C_{subspace}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_angle_p=5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_angle_p=25.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_angle_p=125.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see some interesting trends here.
+ First, the results are all worse than what we saw in the noiseless case.
+ Second, we can see that the 
+\begin_inset Formula $C_{subspace}$
+\end_inset
+
+ performance measure here indicates that when the noise is getting larger,
+ recreating the subspaces becomes more and more difficut - as we can see
+ that for large enough noise, the performance measure goes to 0 (as opposed
+ to what was seen in the noiseless case).
+\end_layout
+
+\begin_layout Standard
+We now move forward to the results from the SSC algorithm.
+\end_layout
+
+\begin_layout Standard
+For the 
+\begin_inset Formula $C_{cluster}$
+\end_inset
+
+ measure, we get:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_cluster_p=5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_cluster_p=25.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_cluster_p=125.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And for the second measure, 
+\begin_inset Formula $C_{subspace}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_angle_p=5.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_angle_p=25.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_angle_p=125.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can see similar trends here - the performance gets worse as P increases,
+ as the angle between the subspaces gets smaller, and as the noise increases.
+\end_layout
+
+\begin_layout Standard
+Same as before, we see that this algorithm slightly outperforms the K-means
+ algorithm - so we can conclude that the SSC algorithm is more robust to
+ noise.
+ We can also see that the noisy case yields far less fitting solutions than
+ the noiseless case.
+\end_layout
+
+\begin_layout Part*
+Simulation Study - testing different parameters.
+\end_layout
+
+\begin_layout Standard
+For the second part of the project, we chose to test both performance measures,
+ while varying 2 parameters that weren't tested in the previous parts.
+\end_layout
+
+\begin_layout Standard
+We chose to test the effect of K - the number of clusters, and 
+\begin_inset Formula $d$
+\end_inset
+
+ - the dimension of each subspace.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Inspecting the effect of K.
+\end_layout
+
+\begin_layout Standard
+In order to test the effect of K, we chose to test 7 different values of
+ K - from 2 to 8 (setting K to higher values results in an overwhelming
+ runtime, as we must go over all permutations of 
+\begin_inset Formula $[K]$
+\end_inset
+
+ to calculate our performance measures).
+\end_layout
+
+\begin_layout Standard
+We divided the study, again, to 2 cases - noiseless, and noisy.
+\end_layout
+
+\begin_layout Standard
+For the noiseless case, we set the following parameter values:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P=50,D=10,N=1000$
+\end_inset
+
+ - and the average angle 
+\begin_inset Formula $\theta$
+\end_inset
+
+ changes on a logsacle, same as in the previous experiments.
+\end_layout
+
+\begin_layout Standard
+For the noisy case, we also set 
+\begin_inset Formula $\theta=0.6$
+\end_inset
+
+, and vary the noise level 
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ on the same scale as in the previous part.
+\end_layout
+
+\begin_layout Standard
+The results we get for the noiseless case are again separated by both measures,
+ and the two algorithms.
+\end_layout
+
+\begin_layout Standard
+We shall also note that since the 
+\begin_inset Formula $C_{subspace}$
+\end_inset
+
+ measure is unnormlized, we can expect it to increase with K- but we can
+ discuss these results as if they were normalized (i.e.
+ divided by the value of K, for that matter).
+\end_layout
+
+\begin_layout Standard
+For the K-means algorithm:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/kmeans_hm_angle_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/kmeans_hm_cluster_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These again point out the performance decreases when the number of cluster
+ increases.
+\end_layout
+
+\begin_layout Standard
+For the SSC algorithm, we get:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/ssc_hm_angle_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/ssc_hm_cluster_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This results demonstrated the same.
+\end_layout
+
+\begin_layout Standard
+For the noisy case, we get the following results:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_angle_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_cluster_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_cluster_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_angle_k_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here we an also see the effect of adding noise, as the performance decreases
+ it.
+ Altough, this time there appears to be no difference between the two algorithm'
+s performance.
+\end_layout
+
+\begin_layout Standard
+Be that as it may, we can clearly see the effect of the number of clusters.
+ As the number of clusters increases, the performance is getting more and
+ more poor.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Inspecting the effect of d.
+\end_layout
+
+\begin_layout Standard
+For this matter, we use the same settings of for setting K, except for taking
+ 
+\begin_inset Formula $P=55$
+\end_inset
+
+ (for both the noiseless and the noisy case).
+ For the range of d, we use a logspace of 10 values, between 1 and 50.
+\end_layout
+
+\begin_layout Standard
+The results we get for these experiments, for the noiseless case:
+\end_layout
+
+\begin_layout Standard
+For the K-means algorithm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/kmeans_hm_angle_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/kmeans_hm_cluster_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And for the SSC algorithm:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/ssc_hm_angle_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/ssc_hm_cluster_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We again see that the performance, for both measures and both algorithms,
+ decreases as we increase the dimension of the subspaces - 
+\series bold
+
+\begin_inset Formula $d$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Now, we move on to demonstrate the results of the noisy case.
+ We can expect it to be worse than the noiselsess case.
+\end_layout
+
+\begin_layout Standard
+For the K-means algorithm:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_angle_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_kmeans_hm_cluster_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And for the SSC algorithm:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_angle_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename C:/Users/sweed/Desktop/Masters/Second/עיבוד נתונים בסטטיסטיקה מודרנית/final_proj/super-fiesta/noisy_ssc_hm_cluster_d_theta_new.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Here, we see that there is a severe drop in performace when adding noise.
+ As the noise increaases, and d increases, both algorithm do a very poor
+ job, especially in the 
+\begin_inset Formula $C_{subspace}$
+\end_inset
+
+ measure.
+ This means they both have a very hard time od recreating the subspaces,
+ which make sense, since we have subspaces with very high dimension, and
+ with a lot of noise - which makes the problem much harder.
+\end_layout
+
+\begin_layout Standard
+It seems as though this parameter has a huge impact on performace, as when
+ we increase it, the subspaces are harder to separate from each other.
 \end_layout
 
 \end_body
